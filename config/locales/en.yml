@@ -4,7 +4,7 @@ en:
       default: "%d.%m.%Y - %H:%M"
   authentication:
     not_authorized: Not authorized
-    invalid_sing_in_credentials: Incorrect login or(and) password
+    invalid_sign_in_credentials: Incorrect login or(and) password
   successfully_deleted: Successfully deleted
   errors:
     to_big_file: An uploaded file is too large. The size shouldn’t exceed 10 MB.

@@ -11,7 +11,7 @@ module Api
           start_jwt_session
           render json: { tokens: tokens }
         else
-          render json: { error: I18n.t('authentication.invalid_sing_in_credentials') }, status: :unauthorized
+          render json: { error: I18n.t('authentication.invalid_sign_in_credentials') }, status: :unauthorized
         end
       end
 
