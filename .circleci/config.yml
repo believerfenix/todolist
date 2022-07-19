@@ -36,6 +36,8 @@ jobs:
     steps:
       - checkout
       - ruby/install-deps
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - run:
           name: Install ImageMagick
           command: sudo apt-get install imagemagick
