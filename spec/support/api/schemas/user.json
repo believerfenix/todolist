@@ -1,0 +1,101 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "tokens": {
+                "csrf": "nrgNc1UuKz/PNkDKrQ5QnjMDHZH8uWvOGZhz7esdUIHQ1XLLOpgah9RmuJKhAHR1r1x+NHgAmQ0FobahWQDcFQ==",
+                "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzMzk4OTMsInVzZXJfaWQiOjIsInVpZCI6IjFhZDc3OGRmLWVkZTItNDI2NS1iM2M0LTYzOWE5MjhkNWJjZiIsInJ1aWQiOiIzMTFlZDE5Ny1jMWY4LTRmZTktOTBmMy0zOTgwMjIxNTI2N2YifQ.Pw12lfkgva58SxKhKZuEmUC8JqG698bH0lNHgCXlP6I",
+                "access_expires_at": "2021-07-15T12:04:53.000+03:00",
+                "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5NDEwOTMsInVpZCI6IjMxMWVkMTk3LWMxZjgtNGZlOS05MGYzLTM5ODAyMjE1MjY3ZiJ9.uQcXtvYM77w6huSFUM85-dlAXcKcAosLKiPra-mZNlo",
+                "refresh_expires_at": "2021-07-22T11:04:53.000+03:00"
+            }
+        }
+    ],
+    "required": [
+        "tokens"
+    ],
+    "properties": {
+        "tokens": {
+            "$id": "#/properties/tokens",
+            "type": "object",
+            "title": "The tokens schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "csrf": "nrgNc1UuKz/PNkDKrQ5QnjMDHZH8uWvOGZhz7esdUIHQ1XLLOpgah9RmuJKhAHR1r1x+NHgAmQ0FobahWQDcFQ==",
+                    "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzMzk4OTMsInVzZXJfaWQiOjIsInVpZCI6IjFhZDc3OGRmLWVkZTItNDI2NS1iM2M0LTYzOWE5MjhkNWJjZiIsInJ1aWQiOiIzMTFlZDE5Ny1jMWY4LTRmZTktOTBmMy0zOTgwMjIxNTI2N2YifQ.Pw12lfkgva58SxKhKZuEmUC8JqG698bH0lNHgCXlP6I",
+                    "access_expires_at": "2021-07-15T12:04:53.000+03:00",
+                    "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5NDEwOTMsInVpZCI6IjMxMWVkMTk3LWMxZjgtNGZlOS05MGYzLTM5ODAyMjE1MjY3ZiJ9.uQcXtvYM77w6huSFUM85-dlAXcKcAosLKiPra-mZNlo",
+                    "refresh_expires_at": "2021-07-22T11:04:53.000+03:00"
+                }
+            ],
+            "required": [
+                "csrf",
+                "access",
+                "access_expires_at",
+                "refresh",
+                "refresh_expires_at"
+            ],
+            "properties": {
+                "csrf": {
+                    "$id": "#/properties/tokens/properties/csrf",
+                    "type": "string",
+                    "title": "The csrf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "nrgNc1UuKz/PNkDKrQ5QnjMDHZH8uWvOGZhz7esdUIHQ1XLLOpgah9RmuJKhAHR1r1x+NHgAmQ0FobahWQDcFQ=="
+                    ]
+                },
+                "access": {
+                    "$id": "#/properties/tokens/properties/access",
+                    "type": "string",
+                    "title": "The access schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzMzk4OTMsInVzZXJfaWQiOjIsInVpZCI6IjFhZDc3OGRmLWVkZTItNDI2NS1iM2M0LTYzOWE5MjhkNWJjZiIsInJ1aWQiOiIzMTFlZDE5Ny1jMWY4LTRmZTktOTBmMy0zOTgwMjIxNTI2N2YifQ.Pw12lfkgva58SxKhKZuEmUC8JqG698bH0lNHgCXlP6I"
+                    ]
+                },
+                "access_expires_at": {
+                    "$id": "#/properties/tokens/properties/access_expires_at",
+                    "type": "string",
+                    "title": "The access_expires_at schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "2021-07-15T12:04:53.000+03:00"
+                    ]
+                },
+                "refresh": {
+                    "$id": "#/properties/tokens/properties/refresh",
+                    "type": "string",
+                    "title": "The refresh schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5NDEwOTMsInVpZCI6IjMxMWVkMTk3LWMxZjgtNGZlOS05MGYzLTM5ODAyMjE1MjY3ZiJ9.uQcXtvYM77w6huSFUM85-dlAXcKcAosLKiPra-mZNlo"
+                    ]
+                },
+                "refresh_expires_at": {
+                    "$id": "#/properties/tokens/properties/refresh_expires_at",
+                    "type": "string",
+                    "title": "The refresh_expires_at schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "2021-07-22T11:04:53.000+03:00"
+                    ]
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}

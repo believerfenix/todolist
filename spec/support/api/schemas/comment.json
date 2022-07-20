@@ -1,0 +1,341 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+      {
+          "data": {
+              "id": "9",
+              "type": "comment",
+              "attributes": {
+                  "body": "aassaaaaaaaaaaaaaaa",
+                  "file": {
+                      "name": "file",
+                      "record": {
+                          "id": 9,
+                          "body": "aassaaaaaaaaaaaaaaa",
+                          "task_id": 4,
+                          "created_at": "2021-07-13T12:39:58.197Z",
+                          "updated_at": "2021-07-13T12:39:58.197Z"
+                      }
+                  }
+              },
+              "relationships": {
+                  "task": {
+                      "data": {
+                          "id": "4",
+                          "type": "task"
+                      }
+                  }
+              }
+          }
+      }
+  ],
+  "required": [
+      "data"
+  ],
+  "properties": {
+      "data": {
+          "$id": "#/properties/data",
+          "type": "object",
+          "title": "The data schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+              {
+                  "id": "9",
+                  "type": "comment",
+                  "attributes": {
+                      "body": "aassaaaaaaaaaaaaaaa",
+                      "file": {
+                          "name": "file",
+                          "record": {
+                              "id": 9,
+                              "body": "aassaaaaaaaaaaaaaaa",
+                              "task_id": 4,
+                              "created_at": "2021-07-13T12:39:58.197Z",
+                              "updated_at": "2021-07-13T12:39:58.197Z"
+                          }
+                      }
+                  },
+                  "relationships": {
+                      "task": {
+                          "data": {
+                              "id": "4",
+                              "type": "task"
+                          }
+                      }
+                  }
+              }
+          ],
+          "required": [
+              "id",
+              "type",
+              "attributes",
+              "relationships"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/data/properties/id",
+                  "type": "string",
+                  "title": "The id schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                      "9"
+                  ]
+              },
+              "type": {
+                  "$id": "#/properties/data/properties/type",
+                  "type": "string",
+                  "title": "The type schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                      "comment"
+                  ]
+              },
+              "attributes": {
+                  "$id": "#/properties/data/properties/attributes",
+                  "type": "object",
+                  "title": "The attributes schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                      {
+                          "body": "aassaaaaaaaaaaaaaaa",
+                          "file": {
+                              "name": "file",
+                              "record": {
+                                  "id": 9,
+                                  "body": "aassaaaaaaaaaaaaaaa",
+                                  "task_id": 4,
+                                  "created_at": "2021-07-13T12:39:58.197Z",
+                                  "updated_at": "2021-07-13T12:39:58.197Z"
+                              }
+                          }
+                      }
+                  ],
+                  "required": [
+                      "body",
+                      "file"
+                  ],
+                  "properties": {
+                      "body": {
+                          "$id": "#/properties/data/properties/attributes/properties/body",
+                          "type": "string",
+                          "title": "The body schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": [
+                              "aassaaaaaaaaaaaaaaa"
+                          ]
+                      },
+                      "file": {
+                          "$id": "#/properties/data/properties/attributes/properties/file",
+                          "type": "object",
+                          "title": "The file schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": {},
+                          "examples": [
+                              {
+                                  "name": "file",
+                                  "record": {
+                                      "id": 9,
+                                      "body": "aassaaaaaaaaaaaaaaa",
+                                      "task_id": 4,
+                                      "created_at": "2021-07-13T12:39:58.197Z",
+                                      "updated_at": "2021-07-13T12:39:58.197Z"
+                                  }
+                              }
+                          ],
+                          "required": [
+                              "name",
+                              "record"
+                          ],
+                          "properties": {
+                              "name": {
+                                  "$id": "#/properties/data/properties/attributes/properties/file/properties/name",
+                                  "type": "string",
+                                  "title": "The name schema",
+                                  "description": "An explanation about the purpose of this instance.",
+                                  "default": "",
+                                  "examples": [
+                                      "file"
+                                  ]
+                              },
+                              "record": {
+                                  "$id": "#/properties/data/properties/attributes/properties/file/properties/record",
+                                  "type": "object",
+                                  "title": "The record schema",
+                                  "description": "An explanation about the purpose of this instance.",
+                                  "default": {},
+                                  "examples": [
+                                      {
+                                          "id": 9,
+                                          "body": "aassaaaaaaaaaaaaaaa",
+                                          "task_id": 4,
+                                          "created_at": "2021-07-13T12:39:58.197Z",
+                                          "updated_at": "2021-07-13T12:39:58.197Z"
+                                      }
+                                  ],
+                                  "required": [
+                                      "id",
+                                      "body",
+                                      "task_id",
+                                      "created_at",
+                                      "updated_at"
+                                  ],
+                                  "properties": {
+                                      "id": {
+                                          "$id": "#/properties/data/properties/attributes/properties/file/properties/record/properties/id",
+                                          "type": "integer",
+                                          "title": "The id schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": 0,
+                                          "examples": [
+                                              9
+                                          ]
+                                      },
+                                      "body": {
+                                          "$id": "#/properties/data/properties/attributes/properties/file/properties/record/properties/body",
+                                          "type": "string",
+                                          "title": "The body schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": "",
+                                          "examples": [
+                                              "aassaaaaaaaaaaaaaaa"
+                                          ]
+                                      },
+                                      "task_id": {
+                                          "$id": "#/properties/data/properties/attributes/properties/file/properties/record/properties/task_id",
+                                          "type": "integer",
+                                          "title": "The task_id schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": 0,
+                                          "examples": [
+                                              4
+                                          ]
+                                      },
+                                      "created_at": {
+                                          "$id": "#/properties/data/properties/attributes/properties/file/properties/record/properties/created_at",
+                                          "type": "string",
+                                          "title": "The created_at schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": "",
+                                          "examples": [
+                                              "2021-07-13T12:39:58.197Z"
+                                          ]
+                                      },
+                                      "updated_at": {
+                                          "$id": "#/properties/data/properties/attributes/properties/file/properties/record/properties/updated_at",
+                                          "type": "string",
+                                          "title": "The updated_at schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": "",
+                                          "examples": [
+                                              "2021-07-13T12:39:58.197Z"
+                                          ]
+                                      }
+                                  },
+                                  "additionalProperties": true
+                              }
+                          },
+                          "additionalProperties": true
+                      }
+                  },
+                  "additionalProperties": true
+              },
+              "relationships": {
+                  "$id": "#/properties/data/properties/relationships",
+                  "type": "object",
+                  "title": "The relationships schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                      {
+                          "task": {
+                              "data": {
+                                  "id": "4",
+                                  "type": "task"
+                              }
+                          }
+                      }
+                  ],
+                  "required": [
+                      "task"
+                  ],
+                  "properties": {
+                      "task": {
+                          "$id": "#/properties/data/properties/relationships/properties/task",
+                          "type": "object",
+                          "title": "The task schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": {},
+                          "examples": [
+                              {
+                                  "data": {
+                                      "id": "4",
+                                      "type": "task"
+                                  }
+                              }
+                          ],
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "$id": "#/properties/data/properties/relationships/properties/task/properties/data",
+                                  "type": "object",
+                                  "title": "The data schema",
+                                  "description": "An explanation about the purpose of this instance.",
+                                  "default": {},
+                                  "examples": [
+                                      {
+                                          "id": "4",
+                                          "type": "task"
+                                      }
+                                  ],
+                                  "required": [
+                                      "id",
+                                      "type"
+                                  ],
+                                  "properties": {
+                                      "id": {
+                                          "$id": "#/properties/data/properties/relationships/properties/task/properties/data/properties/id",
+                                          "type": "string",
+                                          "title": "The id schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": "",
+                                          "examples": [
+                                              "4"
+                                          ]
+                                      },
+                                      "type": {
+                                          "$id": "#/properties/data/properties/relationships/properties/task/properties/data/properties/type",
+                                          "type": "string",
+                                          "title": "The type schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": "",
+                                          "examples": [
+                                              "task"
+                                          ]
+                                      }
+                                  },
+                                  "additionalProperties": true
+                              }
+                          },
+                          "additionalProperties": true
+                      }
+                  },
+                  "additionalProperties": true
+              }
+          },
+          "additionalProperties": true
+      }
+  },
+  "additionalProperties": true
+}
