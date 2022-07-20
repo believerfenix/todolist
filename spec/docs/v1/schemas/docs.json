@@ -1,0 +1,805 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API",
+    "description": "",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v1/authentication": {
+      "post": {
+        "summary": "Sign In",
+        "tags": [
+          "Authentication"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5": {
+              "examples": {
+                "signs in user": {
+                  "summary": "signs in user",
+                  "value": "username=zola.oreilly&password=password"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "signs in user": {
+                    "summary": "signs in user",
+                    "value": {
+                      "tokens": {
+                        "csrf": "ztB1KhJEzUmptS8E73OOaydbF8yrFLKU/EL1I3qLdfhCeI2yAj2ZIhHUpxP4Sz/wzpGfVarBqogGXCRBgP6pww==",
+                        "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjEsInVpZCI6IjE1YTMwYzQxLTAwZDktNDQwYy05YzgwLTk5MDgyZTFjMjVlMyIsInJ1aWQiOiIyYTkxYTg4Yy04NmQ2LTQ0ZjktYmQwYi0zODU0MmJhMjE0M2EifQ.rhCS6PRewL-n169-cCer84XHepWfR6pwe2FTadaSRDk",
+                        "access_expires_at": "2021-07-15T12:31:23.000+03:00",
+                        "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5NDI2ODMsInVpZCI6IjJhOTFhODhjLTg2ZDYtNDRmOS1iZDBiLTM4NTQyYmEyMTQzYSJ9.E5KTbQsLhJD_kaHLKI_ja9JlRatKg5ImXX6jEfwtmho",
+                        "refresh_expires_at": "2021-07-22T11:31:23.000+03:00"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/authentication/{id}": {
+      "delete": {
+        "summary": "Sign Out",
+        "tags": [
+          "Authentication"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "example": "2"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjIsInVpZCI6ImU1ZTM2NDRhLWYzNDYtNDQ0ZC04NGQ4LTAzY2U2MjYwOTkxMiIsInJ1aWQiOiIyYmEzMjRjMC1iMjUxLTQzMzUtOWEyNC03YWJjOWNmYzQ0M2EifQ.UsZucUjz16vEsw3LKZCKqymsY2lf9wCRI1109Baqp8U"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "any": {
+              }
+            },
+            "headers": {
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/comments": {
+      "post": {
+        "summary": "Create a comment",
+        "tags": [
+          "Comments"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjMsInVpZCI6IjBkNTk2OTA5LTZmYmItNGYzNi1iMDIxLWI3MDE3MDNlM2RlOSJ9.zCdT7ClmGEglCNvar-v37Wt9vqTy5NT95_JOLuhTXRM"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5": {
+              "examples": {
+                "creates a comment": {
+                  "summary": "creates a comment",
+                  "value": "comment[body]=Autem+consequatur+eius.+Ut+dolore+quia.+Unde+sed+ut.&comment[task_id]=1"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "creates a comment": {
+                    "summary": "creates a comment",
+                    "value": {
+                      "data": {
+                        "id": "1",
+                        "type": "comment",
+                        "attributes": {
+                          "body": "Autem consequatur eius. Ut dolore quia. Unde sed ut.",
+                          "file": {
+                            "name": "file",
+                            "record": {
+                              "id": 1,
+                              "body": "Autem consequatur eius. Ut dolore quia. Unde sed ut.",
+                              "task_id": 1,
+                              "created_at": "2021-07-15T08:31:23.238Z",
+                              "updated_at": "2021-07-15T08:31:23.238Z"
+                            }
+                          }
+                        },
+                        "relationships": {
+                          "task": {
+                            "data": {
+                              "id": "1",
+                              "type": "task"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/comments/{id}": {
+      "delete": {
+        "summary": "Delete a comment",
+        "tags": [
+          "Comments"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "example": "2"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjQsInVpZCI6IjVlYmJmMDQzLWI2ODYtNGFlOC1iMDAyLTFiODFjODYyNWZiZSJ9.yf9AIw4oKie_L7Vyl_lN_BU3G0tT8UqcKmFsXHBVTIo"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "deletes a comment": {
+                    "summary": "deletes a comment",
+                    "value": {
+                      "message": "Successfully deleted"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/projects": {
+      "post": {
+        "summary": "Create a project",
+        "tags": [
+          "Projects"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjUsInVpZCI6IjJkNjNlMTc5LTgwNDgtNDJiMS1hNGMzLTdlZGQwMzhjN2EwZSJ9.ajW8TxMrLxLdTinLSFW8keXWA_IYaOdV5deTq89G7pw"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5": {
+              "examples": {
+                "creates a new project": {
+                  "summary": "creates a new project",
+                  "value": "project[name]=necessitatibus"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "creates a new project": {
+                    "summary": "creates a new project",
+                    "value": {
+                      "data": {
+                        "id": "3",
+                        "type": "project",
+                        "attributes": {
+                          "name": "necessitatibus"
+                        },
+                        "relationships": {
+                          "user": {
+                            "data": {
+                              "id": "5",
+                              "type": "user"
+                            }
+                          },
+                          "tasks": {
+                            "data": [
+
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/projects/{id}": {
+      "put": {
+        "summary": "Update a project",
+        "tags": [
+          "Projects"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "example": "4"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjYsInVpZCI6ImMzNzVkN2MzLWRhN2MtNDM2Yi05NTk0LTgyNDEwNWI0YTQwNCJ9.bVsCCRbOZrMlq9x-6R1kVsRzJXu9tFUrkTy5MvjGjjo"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5": {
+              "examples": {
+                "updates project": {
+                  "summary": "updates project",
+                  "value": "project[name]=iure"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "updates project": {
+                    "summary": "updates project",
+                    "value": {
+                      "data": {
+                        "id": "4",
+                        "type": "project",
+                        "attributes": {
+                          "name": "iure"
+                        },
+                        "relationships": {
+                          "user": {
+                            "data": {
+                              "id": "6",
+                              "type": "user"
+                            }
+                          },
+                          "tasks": {
+                            "data": [
+
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a project",
+        "tags": [
+          "Projects"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "example": "5"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjcsInVpZCI6IjhhYzdiNDNiLTI0NDctNGU3Ni1iOTBhLTVmYzE2MTEyMmM1NyJ9.2iZ7EXMlirEl6h_JfPR8O8O0yrrQgIOvEKmETawJkYk"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "deletes project": {
+                    "summary": "deletes project",
+                    "value": {
+                      "message": "Successfully deleted"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tasks": {
+      "post": {
+        "summary": "Create a task",
+        "tags": [
+          "Tasks"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjgsInVpZCI6ImYzMjFlOTI0LTNjZTMtNGVmYy1hZTU3LTNmODg1YmE2NjdlZiJ9.TSAofVnMaiM-rEuMhU-GwC0TPYRQXiEGoD4ziOfdvHQ"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5": {
+              "examples": {
+                "creates a new task": {
+                  "summary": "creates a new task",
+                  "value": "task[name]=ut&task[deadline]=2021-07-22+08%3A31%3A23+UTC&task[project_id]=6"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "creates a new task": {
+                    "summary": "creates a new task",
+                    "value": {
+                      "data": {
+                        "id": "3",
+                        "type": "task",
+                        "attributes": {
+                          "name": "ut",
+                          "deadline": "2021-07-22T08:31:23.000Z",
+                          "position": 1,
+                          "is_done": false
+                        },
+                        "relationships": {
+                          "comments": {
+                            "data": [
+
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tasks/{id}": {
+      "put": {
+        "summary": "Update a task",
+        "tags": [
+          "Tasks"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "example": "4"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjksInVpZCI6IjZjNDg5ZjdiLTJhOGYtNDQyMS05YzhjLTk2NGMzNTdmNzUxMyJ9.zHTpxjEPRiPfybN-ne-VJ92uKv5OsAuspIULEqH-ITU"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5": {
+              "examples": {
+                "updates project": {
+                  "summary": "updates project",
+                  "value": "task[name]=iste&task[deadline]=2021-07-20+08%3A31%3A23+UTC&task[project_id]=7"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "updates project": {
+                    "summary": "updates project",
+                    "value": {
+                      "data": {
+                        "id": "4",
+                        "type": "task",
+                        "attributes": {
+                          "name": "iste",
+                          "deadline": "2021-07-20T08:31:23.000Z",
+                          "position": 1,
+                          "is_done": false
+                        },
+                        "relationships": {
+                          "comments": {
+                            "data": [
+
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a task",
+        "tags": [
+          "Tasks"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "example": "5"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "example": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjEwLCJ1aWQiOiJjNGJhYzg1ZC1kMzExLTQ0NGEtOTVjYy0wNjhhZjA0NDlkOTAifQ.Of9VTbAP55MG89ONFyNDERF6JbLUPvZIMLNE60AGA8I"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "deletes project": {
+                    "summary": "deletes project",
+                    "value": {
+                      "message": "Successfully deleted"
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users": {
+      "post": {
+        "summary": "Sign up",
+        "tags": [
+          "Users"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "example": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "example": "application/x-www-form-urlencoded"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5": {
+              "examples": {
+                "signs in user": {
+                  "summary": "signs in user",
+                  "value": "username=rhea.anderson&password=password"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json; charset=utf-8": {
+                "examples": {
+                  "signs in user": {
+                    "summary": "signs in user",
+                    "value": {
+                      "tokens": {
+                        "csrf": "528erlGhzH/IqWdnwh1yjuh/PRqpRUW/fmQkAxbe3Mcbbl5/FLg2O2+X88FaPB8uMrgZoB4By9r0YMTtkkBK/w==",
+                        "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjYzNDE0ODMsInVzZXJfaWQiOjExLCJ1aWQiOiIzNTU4MDMyYS0zMTExLTQ5ZmMtYjIyYS1iODJjZTg1M2UwZTMiLCJydWlkIjoiM2MxNGE1NDgtNWJjOS00YmE3LTkyMzMtMGU2MWExYzFiYTFmIn0.Ul2fpmD-QX76_1yXAUehbZ3yivMtyx0HwKmXnHZ2hlA",
+                        "access_expires_at": "2021-07-15T12:31:23.000+03:00",
+                        "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjY5NDI2ODMsInVpZCI6IjNjMTRhNTQ4LTViYzktNGJhNy05MjMzLTBlNjFhMWMxYmExZiJ9.RzmAtPRqjZZWwyk9UT6be8O27qxnGaGJyR1RhA2CTdE",
+                        "refresh_expires_at": "2021-07-22T11:31:23.000+03:00"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "application/json; charset=utf-8"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": ""
+    },
+    {
+      "name": "Comments",
+      "description": ""
+    },
+    {
+      "name": "Projects",
+      "description": ""
+    },
+    {
+      "name": "Tasks",
+      "description": ""
+    },
+    {
+      "name": "Users",
+      "description": ""
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "Authentication",
+      "tags": [
+        "Authentication"
+      ]
+    },
+    {
+      "name": "Comments",
+      "tags": [
+        "Comments"
+      ]
+    },
+    {
+      "name": "Projects",
+      "tags": [
+        "Projects"
+      ]
+    },
+    {
+      "name": "Tasks",
+      "tags": [
+        "Tasks"
+      ]
+    },
+    {
+      "name": "Users",
+      "tags": [
+        "Users"
+      ]
+    }
+  ]
+}

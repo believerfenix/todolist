@@ -1,0 +1,240 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+      {
+          "data": {
+              "id": "12",
+              "type": "project",
+              "attributes": {
+                  "name": "222222222"
+              },
+              "relationships": {
+                  "user": {
+                      "data": {
+                          "id": "1",
+                          "type": "user"
+                      }
+                  },
+                  "tasks": {
+                      "data": []
+                  }
+              }
+          }
+      }
+  ],
+  "required": [
+      "data"
+  ],
+  "properties": {
+      "data": {
+          "$id": "#/properties/data",
+          "type": "object",
+          "title": "The data schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+              {
+                  "id": "12",
+                  "type": "project",
+                  "attributes": {
+                      "name": "222222222"
+                  },
+                  "relationships": {
+                      "user": {
+                          "data": {
+                              "id": "1",
+                              "type": "user"
+                          }
+                      },
+                      "tasks": {
+                          "data": []
+                      }
+                  }
+              }
+          ],
+          "required": [
+              "id",
+              "type",
+              "attributes",
+              "relationships"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/data/properties/id",
+                  "type": "string",
+                  "title": "The id schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                      "12"
+                  ]
+              },
+              "type": {
+                  "$id": "#/properties/data/properties/type",
+                  "type": "string",
+                  "title": "The type schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                      "project"
+                  ]
+              },
+              "attributes": {
+                  "$id": "#/properties/data/properties/attributes",
+                  "type": "object",
+                  "title": "The attributes schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                      {
+                          "name": "222222222"
+                      }
+                  ],
+                  "required": [
+                      "name"
+                  ],
+                  "properties": {
+                      "name": {
+                          "$id": "#/properties/data/properties/attributes/properties/name",
+                          "type": "string",
+                          "title": "The name schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": [
+                              "222222222"
+                          ]
+                      }
+                  },
+                  "additionalProperties": true
+              },
+              "relationships": {
+                  "$id": "#/properties/data/properties/relationships",
+                  "type": "object",
+                  "title": "The relationships schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                      {
+                          "user": {
+                              "data": {
+                                  "id": "1",
+                                  "type": "user"
+                              }
+                          },
+                          "tasks": {
+                              "data": []
+                          }
+                      }
+                  ],
+                  "required": [
+                      "user",
+                      "tasks"
+                  ],
+                  "properties": {
+                      "user": {
+                          "$id": "#/properties/data/properties/relationships/properties/user",
+                          "type": "object",
+                          "title": "The user schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": {},
+                          "examples": [
+                              {
+                                  "data": {
+                                      "id": "1",
+                                      "type": "user"
+                                  }
+                              }
+                          ],
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "$id": "#/properties/data/properties/relationships/properties/user/properties/data",
+                                  "type": "object",
+                                  "title": "The data schema",
+                                  "description": "An explanation about the purpose of this instance.",
+                                  "default": {},
+                                  "examples": [
+                                      {
+                                          "id": "1",
+                                          "type": "user"
+                                      }
+                                  ],
+                                  "required": [
+                                      "id",
+                                      "type"
+                                  ],
+                                  "properties": {
+                                      "id": {
+                                          "$id": "#/properties/data/properties/relationships/properties/user/properties/data/properties/id",
+                                          "type": "string",
+                                          "title": "The id schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": "",
+                                          "examples": [
+                                              "1"
+                                          ]
+                                      },
+                                      "type": {
+                                          "$id": "#/properties/data/properties/relationships/properties/user/properties/data/properties/type",
+                                          "type": "string",
+                                          "title": "The type schema",
+                                          "description": "An explanation about the purpose of this instance.",
+                                          "default": "",
+                                          "examples": [
+                                              "user"
+                                          ]
+                                      }
+                                  },
+                                  "additionalProperties": true
+                              }
+                          },
+                          "additionalProperties": true
+                      },
+                      "tasks": {
+                          "$id": "#/properties/data/properties/relationships/properties/tasks",
+                          "type": "object",
+                          "title": "The tasks schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": {},
+                          "examples": [
+                              {
+                                  "data": []
+                              }
+                          ],
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "$id": "#/properties/data/properties/relationships/properties/tasks/properties/data",
+                                  "type": "array",
+                                  "title": "The data schema",
+                                  "description": "An explanation about the purpose of this instance.",
+                                  "default": [],
+                                  "examples": [
+                                      []
+                                  ],
+                                  "additionalItems": true,
+                                  "items": {
+                                      "$id": "#/properties/data/properties/relationships/properties/tasks/properties/data/items"
+                                  }
+                              }
+                          },
+                          "additionalProperties": true
+                      }
+                  },
+                  "additionalProperties": true
+              }
+          },
+          "additionalProperties": true
+      }
+  },
+  "additionalProperties": true
+}
